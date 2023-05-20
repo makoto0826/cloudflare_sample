@@ -1,6 +1,6 @@
 export async function getCustomers() {
   try {
-    const { results } = await getDB().prepare('SELECT * FROM Customers').all()
+    const { results } = await getDB().prepare('SELECT * FROM customers').all()
     return results ?? []
   } catch (error) {
     console.error(error)
@@ -12,7 +12,7 @@ export async function generateCustomer() {
   try {
     await getDB()
       .prepare(
-        "INSERT INTO Customers (CompanyName, ContactName) VALUES ('Test Company', 'Test Contact')"
+        "INSERT INTO customers (customer_name) VALUES ('Test User')"
       )
       .run()
   } catch (error) {
