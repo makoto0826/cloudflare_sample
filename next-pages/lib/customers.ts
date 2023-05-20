@@ -27,5 +27,5 @@ export type Customer = {
 }
 
 function getDB() {
-  return process.env.sample1
+  return process.env.DB
 }
