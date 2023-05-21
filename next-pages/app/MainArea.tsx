@@ -7,7 +7,7 @@ export default function MainArea() {
   const KEYS = [...Array(300)].map((_, i) => i + 1)
 
   const contents = KEYS.map((x) => {
-    if (x % 25 === 0) {
+    if (x % 5 === 0) {
       return (
         <div key={x} className="pt-4">
           <ErrorItem value={x} />

@@ -1,12 +1,16 @@
 {
-  "name": "cloudflare_pages_sample01",
+  "name": "next-pages",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pages:dev": "wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat",
+    "pages:watch": "npx @cloudflare/next-on-pages --watch",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "pages:deploy": "wrangler pages deploy .vercel/output/static --project-name next-pages"
   },
   "dependencies": {
     "@cloudflare/d1": "^1.4.1",
@@ -17,6 +21,7 @@
     "server-only": "^0.0.1"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.0.0",
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
@@ -26,6 +31,7 @@
     "postcss": "^8.4.21",
     "prettier": "^2.8.7",
     "tailwindcss": "^3.3.1",
-    "typescript": "4.9.3"
+    "typescript": "4.9.3",
+    "wrangler": "^3.0.0"
   }
 }
