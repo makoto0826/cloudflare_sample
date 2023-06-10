@@ -7,7 +7,7 @@ const KEY = 'holiday';
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     console.log("fetch");
-    
+
     try {
       let json = await env.KV.get(KEY);
 
@@ -73,7 +73,10 @@ function convert(buffer: ArrayBuffer) {
     }
 
     const sp = line.split(',');
-    holidays.push({ date: sp[0], name: sp[1] });
+
+    if (sp[0] !== "") {
+      holidays.push({ date: sp[0], name: sp[1] });
+    }
   }
 
   return holidays;
