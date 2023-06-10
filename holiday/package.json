@@ -1,0 +1,21 @@
+{
+  "name": "holiday",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler publish",
+    "start": "wrangler dev"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230419.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/encoding-japanese": "^2.0.1",
+    "@types/node": "^20.2.1",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.4",
+    "wrangler": "^3.1.0"
+  },
+  "dependencies": {
+    "encoding-japanese": "^2.0.0"
+  }
+}

@@ -1,4 +1,3 @@
-import AppContainer from './MainArea'
 import MainArea from './MainArea'
 import { Container } from './components'
 

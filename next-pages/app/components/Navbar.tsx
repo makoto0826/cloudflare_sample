@@ -1,3 +1,6 @@
+'use client'
+
+import { useWindowScroll } from '../hooks'
 import Link from 'next/link'
 
 type NavbarProps = {
@@ -5,8 +8,11 @@ type NavbarProps = {
 }
 
 export default function Navbar({ children }: NavbarProps) {
+  const value = useWindowScroll()
+  const navCss = value > 100 ? `navbar bg-base-100 shadow-lg sticky top-0` : `navbar bg-base-100`
+
   return (
-    <div className="navbar bg-base-100 sticky top-0">
+    <div className={navCss}>
       <div className="flex-none">
         <button className="btn btn-square btn-ghost">
           <svg

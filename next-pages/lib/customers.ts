@@ -10,20 +10,15 @@ export async function getCustomers() {
 
 export async function generateCustomer() {
   try {
-    await getDB()
-      .prepare(
-        "INSERT INTO customers (customer_name) VALUES ('Test User')"
-      )
-      .run()
+    await getDB().prepare("INSERT INTO customers (customer_name) VALUES ('Test User')").run()
   } catch (error) {
     console.error(error)
   }
 }
 
 export type Customer = {
-  CustomerID: number
-  CompanyName: string
-  ContactName: string
+  customer_id: number
+  customer_name: string
 }
 
 function getDB() {

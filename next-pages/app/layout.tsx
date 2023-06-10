@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
       <body>
-        <header>
+        <main>
           <Navbar>
             <div className="flex-none">
               <ul className="menu menu-horizontal px-1">
@@ -25,8 +25,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </ul>
             </div>
           </Navbar>
-        </header>
-        <main>{children}</main>
+          {children}
+        </main>
       </body>
     </html>
   )
