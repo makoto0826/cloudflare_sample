@@ -6,6 +6,8 @@ const KEY = 'holiday';
 
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+    console.log("fetch");
+    
     try {
       let json = await env.KV.get(KEY);
 
@@ -29,6 +31,8 @@ export default {
   },
 
   async scheduled(event: ScheduledEvent, env: Env, ctx: ExecutionContext) {
+    console.log("scheduled" + event.timeStamp)
+
     try {
       const buffer = await download();
       const data = convert(buffer);
@@ -38,6 +42,8 @@ export default {
     } catch (error) {
       console.error(error);
     }
+
+
   },
 };
 
